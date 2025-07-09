@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import imgSayyid from "@assets/images/sayyidzavic.jpg";
+
+const { SITE_TITLE } = Astro.props;
+---
+
+<section id="hero">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-14 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-3 text-center lg:text-left">
+            <h1 class="text-4xl sm:text-5xl font-bold leading-tight">
+                Hi, I'm <span class="text-gradient">{SITE_TITLE}</span>
+            </h1>
+
+            <p class="text-lg text-center lg:text-left mb-8">
+                Web Developer, Video Editor, Graphic Designer.
+            </p>
+
+            <a
+                href="#projects"
+                class="inline-flex items-center text-indigo-400 border border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-6 gap-2 rounded-lg"
+            >
+                <span>Check My Project</span>
+                <svg
+                    class="w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6 ml-2"
+                >
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Right Column -->
+
+        <div class="order-first lg:order-none lg:col-span-2 flex justify-center">
+            <Image src={imgSayyid} alt="Hero" class="object-cover rounded-2xl w-72 lg:w-full" loading="eager" />
+        </div>
+    </div>
+</section>
